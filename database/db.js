@@ -7,13 +7,15 @@ export const db= mysql.createConnection({
 
 });
 
+
 db.connect((err) => {
-    if (err) {
-        console.error("error connecting: ", err);
-        return;
+    if(err){
+        console.error("error connecting:", err);
+        
     }else{
-        console.log("Connected to the database successfully!");
+        console.error("connection successful");
     }
-   
+
 });
+
     

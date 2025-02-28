@@ -1,7 +1,10 @@
 import express from "express";
-import { getUser } from "../controller/User.js";
+
+import { getFile } from "../controller/file.js";
+import upload from "../middleware/multerConfig.js";
 
 const routes = express.Router();
-routes.get("/get-user",getUser);
+
+routes.post("/file-upload", upload.array("images", 3), getFile);
 
 export default routes;
